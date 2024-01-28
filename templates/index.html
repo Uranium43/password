@@ -11,7 +11,12 @@
         <h1>Password Analyzer</h1>
         <form id="passwordForm">
             <label for="password">Enter your password:</label>
-            <input type="password" id="password" name="password" required>
+            <div class="password-input-container">
+                <input type="password" id="password" name="password" required>
+                <button type="button" id="togglePassword" onclick="togglePasswordVisibility()">
+                    <img src="static/Off.png">
+                </button>
+            </div>
             <button type="button" onclick="checkPassword()">Check Password</button>
         </form>
         <p id="result"></p>

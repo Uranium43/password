@@ -1,5 +1,6 @@
 function checkPassword() {
     var password = document.getElementById('password').value;
+    var resultElement = document.getElementById('result');
 
     // Make an AJAX request to the server to check the password strength
     var xhr = new XMLHttpRequest();
@@ -9,7 +10,6 @@ function checkPassword() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var response = JSON.parse(xhr.responseText);
             displayResult(response.is_strong, response.message, response.conditions);
-            clearInput(); // Clear the input field after checking the password
         }
     };
     xhr.send('password=' + password);
@@ -26,6 +26,15 @@ function displayResult(isStrong, message, conditions) {
     }
 }
 
-function clearInput() {
-    document.getElementById('password').value = '';
+function togglePasswordVisibility() {
+    var passwordInput = document.getElementById('password');
+    var togglePasswordButton = document.getElementById('togglePassword');
+
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        togglePasswordButton.innerHTML = '<img src="static/on.png">';
+    } else {
+        passwordInput.type = 'password';
+        togglePasswordButton.innerHTML = '<img src="static/Off.png">';
+    }
 }

@@ -5,6 +5,28 @@ body {
     padding: 0;
     color: #ffffff; /* Light text color */
 }
+/* ... (previous styles) */
+
+.password-input-container {
+    position: relative;
+}
+
+#togglePassword {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#togglePassword img {
+    width: 20px;
+    height: auto;
+}
+
+/* ... (rest of your existing CSS) */
 
 .container {
     max-width: 600px;
