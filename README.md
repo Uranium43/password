@@ -37,11 +37,6 @@ Password Analyzer is a web application built using Flask and JavaScript that che
     cd password-analyzer
     ```
 
-3. Install the required dependencies:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
 
 ### Usage
 
